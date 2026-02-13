@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="quill.snow.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #E04817;
+      --primary-hover: #b83a12;
+      --bg-main: #F4F4F4; 
+      --card-bg: #ffffff;
+      --text-main: #000000;
+      --text-sub: #444444;
+      --border: #e0e6ed;
+      --shadow: 0 4px 15px rgba(0,0,0,0.05);
+      --radius: 12px;
+    }
+
+    body { 
+      width: 420px; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+
+    .main-wrapper {
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* Updated Title with Icon */
+    .title-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .title-icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    h2 { 
+      font-size: 22px; 
+      margin: 0;
+      color: var(--primary); 
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    label { 
+      display: block; 
+      font-size: 11px; 
+      font-weight: 700; 
+      color: var(--text-main); 
+      margin-bottom: 8px; 
+      text-transform: uppercase; 
+      letter-spacing: 0.8px;
+    }
+    
+    input { 
+      width: 100%; 
+      padding: 12px 16px; 
+      margin-bottom: 20px; 
+      border: 1px solid var(--border); 
+      border-radius: 8px; 
+      box-sizing: border-box; 
+      font-size: 14px;
+      transition: all 0.2s ease;
+      background: #fff;
+      color: var(--text-main);
+    }
+
+    input:focus { 
+      outline: none; 
+      border-color: var(--primary); 
+      box-shadow: 0 0 0 3px rgba(224, 72, 23, 0.1); 
+    }
+    
+    .ql-toolbar.ql-snow { border-top-left-radius: 8px; border-top-right-radius: 8px; border-color: var(--border); background: #fff; }
+    .ql-container.ql-snow { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-color: var(--border); height: 150px; font-size: 14px; background: #fff; }
+    
+    button#save { 
+      width: 100%; 
+      padding: 14px; 
+      background: var(--primary); 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-weight: 700; 
+      font-size: 15px;
+      cursor: pointer; 
+      transition: all 0.2s ease;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    button#save:hover { 
+      background: var(--primary-hover); 
+      transform: translateY(-1px);
+    }
+
+    .library-header { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 20px; }
+
+    .snippet-item { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 14px; 
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .snippet-item:hover { 
+      border-color: var(--primary);
+    }
+
+    .snippet-info { display: flex; flex-direction: column; gap: 2px; }
+    .snippet-trigger { font-weight: 700; color: var(--primary); font-size: 14px; }
+    .snippet-preview { font-size: 12px; color: var(--text-sub); }
+    
+    .delete-btn { 
+      color: #999; 
+      cursor: pointer; 
+      padding: 8px; 
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .delete-btn:hover { background: #fff1f0; color: var(--primary); }
+  </style>
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="card">
+      <div class="title-container">
+        <img src="icon/icon48.png" class="title-icon" alt="Quack Icon">
+        <h2>Quack</h2>
+      </div>
+      
+      <label>Shortcut Trigger</label>
+      <input type="text" id="trigger" placeholder="e.g. ;sig" />
+      
+      <label>Content</label>
+      <div id="editor-container"></div>
+      
+      <button id="save">Save to Library</button>
+    </div>
+
+<div class="library-header">
+  <label>Your Library</label>
+  
+  <div id="empty-state" style="display:none; text-align:center; padding:20px; border: 1px dashed var(--border); border-radius: 8px; margin-top: 10px;">
+    <p style="font-size:13px; color:var(--text-sub); margin:0;">
+      No snippets yet! Type a trigger like <strong style="color:var(--primary)">;sig</strong> and paste your content above to begin.
+    </p>
+  </div>
+
+  <div id="snippet-list"></div>
+</div>
+
+  <script src="quill.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
