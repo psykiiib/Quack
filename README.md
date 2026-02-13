@@ -1,6 +1,11 @@
 <p align="center">
   <img src="icon/icon128.png" width="128" height="128" alt="Quack Logo">
 </p>
+<p align="center">
+  <a href="https://github.com/psykiiib/Quack/releases/tag/v1.5">
+    <img src="https://img.shields.io/badge/Download-v1.5-E04817?style=for-the-badge&logo=github" alt="Download Quack v1.5">
+  </a>
+</p>
 
 # Quack
 
@@ -11,11 +16,11 @@ Quack is a productivity-focused browser extension designed to help you expand sh
 ---
 
 ### Features
-* **Rich Text Support:** Powered by Quill.js for bold, italics, links, and images.
-* **Smart Sanitization:** Automatically strips malicious code from pasted content.
-* **Unlimited Storage:** Handles large signatures and images without hitting default browser limits.
-* **Universal Reach:** Works across all websites, including Gmail, Outlook, and LinkedIn.
-* **Audio Feedback:** A satisfying *quack* whenever you open the dashboard.
+* Powered by Quill.js for Rich Text Support (bold, italics, links, and images).
+* Automatically strips malicious code from pasted content.
+*  Handles large signatures and images without hitting default browser limits.
+* Works across all websites, including Gmail, Outlook, and LinkedIn.
+* A satisfying *quack* whenever you open the dashboard.
 
 ---
 
@@ -27,12 +32,12 @@ Quack is a productivity-focused browser extension designed to help you expand sh
    * Enable **Developer mode** (top right toggle).
    * Click **Load unpacked**.
    * Select the `Quack` folder you just extracted.
-4. **Usage:** Click the 🦆 icon in your toolbar, set a trigger (like `;sig`), and you're ready to Quack!
+4. **Usage:** Click the <img src="icon/icon128.png" width="20" height="20" alt="Quack Logo"> icon in your toolbar, set a trigger (like `;sig`), and you're ready to Quack!
 
 ---
 
 ### Tech Stack
-* **Frontend:** HTML5, CSS3 (Modern Flat Design)
-* **Editor Engine:** Quill.js (Bundled locally for security)
-* **Storage:** Chrome Storage API (unlimitedStorage)
+* **Frontend:** HTML5, CSS3 
+* **Editor Engine:** Quill.js 
+* **Storage:** Chrome Storage API 
 * **Logic:** Vanilla JavaScript / Browser Extensions API v3
