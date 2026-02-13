@@ -3,7 +3,7 @@
 </p>
 <p align="center">
   <a href="https://github.com/psykiiib/Quack/releases/tag/v1.5">
-    <img src="https://img.shields.io/badge/Download-v1.5-E04817?style=for-the-badge&logo=github" alt="Download Quack v1.5">
+    <img src="https://img.shields.io/badge/Download-v1.6-E04817?style=for-the-badge&logo=github" alt="Download Quack v1.6">
   </a>
 </p>
 
@@ -11,9 +11,8 @@
 
 **Universal, lightning-fast rich text expansion. Quack it anywhere.**
 
-Quack is a productivity-focused browser extension designed to help you expand short triggers into full, rich-text signatures or snippets—complete with images and formatting. Built with a focus on stability, security, and "unlimited" storage for high-resolution content.
+Quack is a productivity-focused browser extension designed to help you expand short triggers into full, rich-text signatures or snippets; complete with images and formatting.
 
----
 
 ### Features
 * Powered by Quill.js for Rich Text Support (bold, italics, links, and images).
@@ -22,6 +21,11 @@ Quack is a productivity-focused browser extension designed to help you expand sh
 * Works across all websites, including Gmail, Outlook, and LinkedIn.
 * A satisfying *quack* whenever you open the dashboard.
 
+###
+
+<p align="center">
+  <img src="utils/use.png" alt="How to use?">
+</p>
 ---
 
 ### Installation
@@ -36,8 +40,31 @@ Quack is a productivity-focused browser extension designed to help you expand sh
 
 ---
 
-### Tech Stack
-* **Frontend:** HTML5, CSS3 
-* **Editor Engine:** Quill.js 
-* **Storage:** Chrome Storage API 
-* **Logic:** Vanilla JavaScript / Browser Extensions API v3
+### Contributing
+
+We welcome contributions from the community! Here are some guidelines to help you get started:
+
+#### Reporting Bugs
+
+If you find a bug, please report it by opening an issue on the [GitHub repository](https://github.com/psykiiib/Quack/issues). Include as much detail as possible, such as steps to reproduce the bug, your operating system, and browser version.
+
+#### Feature Requests
+
+If you have an idea for a new feature, please open an issue on the [GitHub repository](https://github.com/psykiiib/Quack/issues) and describe your idea in detail. We appreciate all suggestions and feedback!
+
+### License
+**Quack** is free for personal use under the **Polyform Noncommercial License 1.0.0**.
+
+
+
+🚫 **Commercial use is not allowed without permission.**
+
+
+### Contact
+
+If you have any questions or need further assistance, feel free to open an issue on the [GitHub repository](https://github.com/psykiiib/Quack/issues). If you are a business or wish to use this extension for commercial advantage, please contact me using any of my socials on my profile.
+
+---
+
+Thank you for contributing to Quack!
+

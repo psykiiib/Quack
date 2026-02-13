@@ -10,8 +10,8 @@
       --card-bg: #ffffff;
       --text-main: #000000;
       --text-sub: #444444;
-      --border: #e0e6ed;
-      --shadow: 0 4px 15px rgba(0,0,0,0.05);
+      --border: #d1d5db; 
+      --shadow: none;    
       --radius: 12px;
     }
 
@@ -34,20 +34,39 @@
       box-shadow: var(--shadow);
       padding: 20px;
       margin-bottom: 20px;
+      border: 1px solid var(--border);
     }
 
-    /* Updated Title with Icon */
-    .title-container {
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 20px;
     }
 
     .title-icon {
       width: 32px;
       height: 32px;
       object-fit: contain;
+    }
+
+    .brand-text-img {
+      height: 24px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     h2 { 
@@ -57,6 +76,42 @@
       font-weight: 700;
       letter-spacing: -0.5px;
     }
+
+    img {
+      pointer-events: none; 
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    button img, .icon-btn img {
+      pointer-events: auto; 
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #95a5a6; 
+      padding: 6px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .bug-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.6; 
+  transition: all 0.2s ease;
+}
+
+  .icon-btn:hover .bug-icon {
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(44%) sepia(51%) saturate(3000%) hue-rotate(340deg) brightness(100%) contrast(100%); /* This filter turns it red on hover! */
+  }
 
     label { 
       display: block; 
@@ -146,9 +201,17 @@
 <body>
   <div class="main-wrapper">
     <div class="card">
-      <div class="title-container">
-        <img src="icon/icon48.png" class="title-icon" alt="Quack Icon">
-        <h2>Quack</h2>
+      
+      <div class="header-row">
+        <div class="brand-group">
+          <img src="icon/icon48.png" class="title-icon" alt="Quack Icon">
+          
+          <img src="icon/title_logo.png" class="brand-text-img" alt="Quack">
+        </div>
+        
+        <button id="bug-btn" class="icon-btn" title="Report a Bug">
+          <img src="icon/bug48.png" class="bug-icon" alt="Report">
+        </button>
       </div>
       
       <label>Shortcut Trigger</label>
@@ -160,17 +223,18 @@
       <button id="save">Save to Library</button>
     </div>
 
-<div class="library-header">
-  <label>Your Library</label>
-  
-  <div id="empty-state" style="display:none; text-align:center; padding:20px; border: 1px dashed var(--border); border-radius: 8px; margin-top: 10px;">
-    <p style="font-size:13px; color:var(--text-sub); margin:0;">
-      No snippets yet! Type a trigger like <strong style="color:var(--primary)">;sig</strong> and paste your content above to begin.
-    </p>
-  </div>
+    <div class="library-header">
+      <label>Your Library</label>
+      
+      <div id="empty-state" style="display:none; text-align:center; padding:20px; border: 1px dashed var(--border); border-radius: 8px; margin-top: 10px;">
+        <p style="font-size:13px; color:var(--text-sub); margin:0;">
+          No snippets yet! Type a trigger like <strong style="color:var(--primary)">;sig</strong> and paste your content above to begin.
+        </p>
+      </div>
 
-  <div id="snippet-list"></div>
-</div>
+      <div id="snippet-list"></div>
+    </div>
+  </div>
 
   <script src="quill.js"></script>
   <script src="popup.js"></script>

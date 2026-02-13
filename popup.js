@@ -10,9 +10,16 @@ const quill = new Quill('#editor-container', {
 
 document.addEventListener('DOMContentLoaded', () => {
     quackSound.play().catch(error => {
-
         console.log("Audio waiting for user interaction:", error);
     });
+
+    const bugBtn = document.getElementById('bug-btn');
+    if (bugBtn) {
+        bugBtn.addEventListener('click', () => {
+            chrome.tabs.create({ url: 'https://github.com/psykiiib/Quack/issues' });
+        });
+    }
+
     loadSnippets();
 });
 
@@ -41,7 +48,6 @@ function sanitizeHTML(html) {
   return tempDiv.innerHTML;
 }
 
-// 3. Save Button Logic
 document.getElementById('save').addEventListener('click', () => {
   const trigger = document.getElementById('trigger').value;
   let replacement = quill.root.innerHTML;
@@ -70,28 +76,26 @@ document.getElementById('save').addEventListener('click', () => {
   });
 });
 
-
 function loadSnippets() {
   chrome.storage.local.get(['snippets'], (result) => {
     const list = document.getElementById('snippet-list');
     const emptyState = document.getElementById('empty-state');
+    
     list.innerHTML = '';
     const snippets = result.snippets || {};
-
     const keys = Object.keys(snippets);
 
-    // Toggle the Getting Started guide
     if (keys.length === 0) {
-      emptyState.style.display = 'block';
+      if (emptyState) emptyState.style.display = 'block';
       return;
     } else {
-      emptyState.style.display = 'none';
+      if (emptyState) emptyState.style.display = 'none';
     }
 
-    // Build the list if snippets exist
     for (const [key, value] of Object.entries(snippets)) {
       const div = document.createElement('div');
       div.className = 'snippet-item';
+      
       const plainText = value.replace(/<[^>]*>/g, '').substring(0, 35);
       
       div.innerHTML = `
@@ -106,13 +110,14 @@ function loadSnippets() {
       list.appendChild(div);
     }
 
-    // (Keep your existing delete-btn listener logic here)
     document.querySelectorAll('.delete-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const item = e.currentTarget.closest('.snippet-item');
         const keyToDelete = e.currentTarget.getAttribute('data-key');
+        
         item.style.opacity = '0';
         item.style.transform = 'translateX(20px)';
+        
         setTimeout(() => {
           delete snippets[keyToDelete];
           chrome.storage.local.set({ snippets }, loadSnippets);
