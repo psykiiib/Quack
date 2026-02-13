@@ -2,7 +2,7 @@
   <img src="icon/icon128.png" width="128" height="128" alt="Quack Logo">
 </p>
 <p align="center">
-  <a href="https://github.com/psykiiib/Quack/releases/tag/v1.5">
+  <a href="https://github.com/psykiiib/Quack/releases/tag/v1.6">
     <img src="https://img.shields.io/badge/Download-v1.6-E04817?style=for-the-badge&logo=github" alt="Download Quack v1.6">
   </a>
 </p>
