@@ -17,7 +17,7 @@ Quack is a productivity-focused browser extension designed to help you expand sh
 
 ### Installation
 
-To install the extension, click the "ADD QUACK TO YOUR BROWSER" button above or just visit the [Chrome Web Store](https://chromewebstore.google.com/detail/hmkajbegmonlfdogpgepmenjhjgbmemo) and click "Add to Chrome" button.
+To install the extension, click the "**ADD QUACK TO YOUR BROWSER**" button above or visit the [Chrome Web Store](https://chromewebstore.google.com/detail/hmkajbegmonlfdogpgepmenjhjgbmemo) directyly and click "Add to Chrome" button.
 
 ---
 
